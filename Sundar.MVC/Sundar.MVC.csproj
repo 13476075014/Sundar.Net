@@ -60,8 +60,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.4\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -69,11 +69,11 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    <Reference Include="System.Web.Http, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.4\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
@@ -128,10 +128,12 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ModuleManagerController.cs" />
     <Compile Include="Controllers\OrgManagerController.cs" />
+    <Compile Include="Controllers\RoleManagerController.cs" />
     <Compile Include="Controllers\UserSessionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthenticateAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -244,6 +246,7 @@
     <Content Include="Content\layui\lay\modules\tree.js" />
     <Content Include="Content\layui\lay\modules\upload.js" />
     <Content Include="Content\layui\lay\modules\util.js" />
+    <Content Include="Css\login.css" />
     <Content Include="Css\main.css" />
     <Content Include="Css\metroStyle\img\line_conn.png" />
     <Content Include="Css\metroStyle\img\loading.gif" />
@@ -260,7 +263,9 @@
     <Content Include="Js\Sys\index.js" />
     <Content Include="Js\Sys\leftNav.js" />
     <Content Include="Js\Sys\orgs.js" />
+    <Content Include="Js\UserJs\login.js" />
     <Content Include="Js\UserJs\modules.js" />
+    <Content Include="Js\UserJs\roles.js" />
     <Content Include="Js\utils.js" />
     <Content Include="Js\vue.js" />
     <Content Include="Js\ztree.js" />
@@ -279,7 +284,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\layui\lay\modules\mobile\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\UserSession\" />
   </ItemGroup>
@@ -293,6 +297,7 @@
     <Content Include="Views\OrgManager\Index.cshtml" />
     <Content Include="Views\ModuleManager\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\RoleManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sundar.BLL\Sundar.BLL.csproj">
